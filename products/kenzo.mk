@@ -1,4 +1,5 @@
-# Copyright (C) 2016 The Pure Nexus Project
+#
+# Copyright 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,26 +12,28 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 # Include pure telephony configuration
 include vendor/nexus/configs/pure_phone.mk
 
-# Inherit AOSP device configuration for angler
-$(call inherit-product, device/huawei/angler/aosp_angler.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, device/xiaomi/kenzo/abc_kenzo.mk)
 
-# Override AOSP build properties
-PRODUCT_NAME := angler
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := angler
-PRODUCT_MODEL := Nexus 6P
-PRODUCT_MANUFACTURER := Huawei
+PRODUCT_NAME := kenzo
+PRODUCT_DEVICE := kenzo
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi Note 3
+PRODUCT_MANUFACTURER := xiaomi
 
-# Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT=google/angler/angler:7.1.2/N2G48B/4073501:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 7.1.2 N2G48B 4073501 release-keys"
+    BUILD_FINGERPRINT=Xiaomi/kenzo/kenzo:6.0.1/MMB29M/V8.2.1.0.MHOCNDL:user/release-keys \
+    PRIVATE_BUILD_DESC="kenzo-user 6.0.1 MMB29M V8.2.1.0.MHOCNDL release-keys"
 
-# Addtional backup tools for dirty flash
-PRODUCT_COPY_FILES += \
-    vendor/nexus/prebuilt/generic/addon.d/91-font.sh:system/addon.d/91-font.sh
+# Extra Optional packages
+PRODUCT_PACKAGES += \
+    ABCOTA \
+	Gallery2
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := kenzo,kate
