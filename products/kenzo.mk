@@ -33,7 +33,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     ABCOTA \
-	Gallery2
+    Gallery2 \
+    Launcher3
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := kenzo,kate
