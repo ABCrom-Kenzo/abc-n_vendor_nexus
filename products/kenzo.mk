@@ -16,17 +16,18 @@
 include vendor/nexus/configs/abc_phone.mk
 
 # Inherit AOSP device configuration for angler
-$(call inherit-product, device/huawei/angler/aosp_angler.mk)
+$(call inherit-product, device/xiaomi/kenzo/abc_kenzo.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := angler
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := angler
-PRODUCT_MODEL := Nexus 6P
-PRODUCT_MANUFACTURER := Huawei
+PRODUCT_NAME := kenzo
+PRODUCT_DEVICE := kenzo
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi Note 3
+PRODUCT_MANUFACTURER := xiaomi
 
-# Device Fingerprint
+$(call inherit-product, device/xiaomi/kenzo/device.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/kenzo/device-vendor.mk)
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT=google/angler/angler:8.0.0/OPR5.170623.011/4397986:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 8.0.0 OPR5.170623.011 4397986 release-keys"
+    BUILD_FINGERPRINT=Xiaomi/kenzo/kenzo:6.0.1/MMB29M/V8.2.1.0.MHOCNDL:user/release-keys \
+    PRIVATE_BUILD_DESC="kenzo-user 6.0.1 MMB29M V8.2.1.0.MHOCNDL release-keys"
