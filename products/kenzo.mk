@@ -31,3 +31,7 @@ $(call inherit-product-if-exists, vendor/xiaomi/kenzo/device-vendor.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=Xiaomi/kenzo/kenzo:6.0.1/MMB29M/V8.2.1.0.MHOCNDL:user/release-keys \
     PRIVATE_BUILD_DESC="kenzo-user 6.0.1 MMB29M V8.2.1.0.MHOCNDL release-keys"
+
+# Extra Optional packages
+PRODUCT_PACKAGES += \
+    Gallery2
