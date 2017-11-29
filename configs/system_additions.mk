@@ -63,7 +63,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Set custom volume steps
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.media_vol_steps=30 \
-    ro.config.bt_sco_vol_steps=30
+    ro.config.media_vol_steps=20 \
+    ro.config.bt_sco_vol_steps=20
 
 $(call inherit-product-if-exists, vendor/nexus/prebuilt/prebuilt.mk)
