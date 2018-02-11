@@ -25,6 +25,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/nexus/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
+# AR
+PRODUCT_COPY_FILES += \
+    vendor/nexus/prebuilt/etc/calibration_cad.xml:system/etc/calibration_cad.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.calibration_cad=/system/etc/calibration_cad.xml
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/nexus/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
