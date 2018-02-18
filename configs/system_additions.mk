@@ -58,9 +58,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DuiDarkTheme \
     SettingsDarkTheme \
-    SystemDarkTheme \
-    StockTheme \
-    PixelTheme
+    SystemDarkTheme
 
 # MusicFX advanced effects
 ifneq ($(TARGET_NO_DSPMANAGER), true)
